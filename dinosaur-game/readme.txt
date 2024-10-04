@@ -3,7 +3,7 @@ Contributors: chrisdavidmiles, google
 Tags: dinosaur, game, chrome, chromium, shortcode
 Donate link: https://chrisdavidmiles.com/donate
 Requires at least: 3.3
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 5.2.4
 Stable tag: 1.0.7
 License: GPLv2
