@@ -3,11 +3,13 @@
  * Plugin Name: Dinosaur Game
  * Plugin URI: https://chrisdavidmiles.com/dinosaur-game
  * Description: Add the dinosaur game from Google Chrome to your site using the [dinosaur-game] shortcode.
- * Version: 1.0.7
+ * Version: 1.1.0
  * Author: Chris David Miles
  * Author URI: https://chrisdavidmiles.com
  * License: GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: dinosaur-game
+ * Domain Path: /languages
  */
 
 if ( ! defined( 'ABSPATH' ) )  die; 
@@ -21,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) )  die;
  */
 
 // Version (to be changed any time sprites, js, css, or plugin version changes.
-defined( 'DINOGAME_VER' ) or define( 'DINOGAME_VER', '1.0.7' );
+defined( 'DINOGAME_VER' ) or define( 'DINOGAME_VER', '1.1.0' );
 
 // URL of directory where plugin assets are found.
 defined( 'DINOGAME_URL' ) or define( 'DINOGAME_URL', plugin_dir_url( __FILE__ ) );
@@ -49,6 +51,20 @@ defined( 'DINOGAME_DUPLICATE_CHECK' ) or define( 'DINOGAME_DUPLICATE_CHECK', tru
 
 
 /**
+ * Load translations.
+ *
+ * Hooked to init rather than plugins_loaded: WordPress 6.7 warns when a
+ * translation is requested before init, and this keeps us clear of that
+ * while still working on the older versions this plugin supports.
+ */
+
+add_action( 'init', 'dinogame_load_textdomain' );
+function dinogame_load_textdomain() {
+    load_plugin_textdomain( 'dinosaur-game', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+}
+
+
+/**
  * Register CSS and JS used by the game.
  */
 
@@ -68,7 +84,7 @@ function dinogame_register_shortcode (){
     if ( DINOGAME_DUPLICATE_CHECK ) {
         static $dinogame_run = false;
         if ( $dinogame_run ) {
-            return '<p>The dinosaur game can only be used once per page.</p>';
+            return '<p>' . esc_html__( 'The dinosaur game can only be used once per page.', 'dinosaur-game' ) . '</p>';
         }
     } 
     $dinogame_run = true;

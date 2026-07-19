@@ -3,9 +3,9 @@ Contributors: chrisdavidmiles, google
 Tags: dinosaur, game, chrome, chromium, shortcode
 Donate link: https://chrisdavidmiles.com/donate
 Requires at least: 3.3
-Tested up to: 6.8
+Tested up to: 7.0
 Requires PHP: 5.2.4
-Stable tag: 1.0.7
+Stable tag: 1.1.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,6 +20,11 @@ To use it, install the plugin, and use the [dinosaur-game] shortcode wherever yo
 * Jump to start a game.
 * The object of the game is to run as far as possible. Enemies and obstacles will try to block your path. 
 * Use the space bar or up key on your keyboard to jump over them. The down key lets you crouch. On mobile, tap on the game area to jump. 
+
+== Installation ==
+1. Search for "Dinosaur Game" on the Plugins > Add New screen in your WordPress admin, or upload the plugin folder to /wp-content/plugins/.
+2. Activate the plugin through the Plugins screen in WordPress.
+3. Add the [dinosaur-game] shortcode wherever you'd like the game to appear.
 
 == Frequently Asked Questions ==
 = Can I change how the game looks? =
@@ -44,6 +49,9 @@ Also feel free to ask a question on the [WordPress.org support forum](https://wo
 2. The dinosaur game works on all screen sizes.
 
 == Changelog ==
+
+= 1.1.0 =
+* Adds translation support, so the plugin can now be translated into other languages. Translations are welcome at https://translate.wordpress.org/projects/wp-plugins/dinosaur-game/
 
 = 1.0.7 =
 * Makes it easier to redefine plugin resources so another plugin could specify custom js, css, or game sprites.
@@ -76,4 +84,3 @@ Also feel free to ask a question on the [WordPress.org support forum](https://wo
 
 = 1.0.0 =
 * Initial release.
-
